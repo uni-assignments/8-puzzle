@@ -1,5 +1,5 @@
-#ifndef BFS_HEADER
-#define BFS_HEADER
+#ifndef UCS_HEADER
+#define UCS_HEADER
 
 #include <map>
 #include <stack>
@@ -7,7 +7,7 @@
 
 #include "abstract_algorithm.hpp"
 
-class BFS : public Algorithm{
+class UCS : public Algorithm{
     public:
         void search(State initial_state);
 };

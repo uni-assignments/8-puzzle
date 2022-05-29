@@ -22,24 +22,24 @@ State::State(vector<int> positions){
         this->possible_moves.push_back(LEFT);
 }
 
+void State::print_state(string state_key){
+    cout << endl;
+    for(int i = 0; i < 9; i++){
+        if(state_key[i] == '0') cout << "  ";
+        else  cout << state_key[i] << " "; 
+        
+        if((i + 1) % 3 == 0) 
+            cout << endl;    
+    }
+}
+
+
 int State::get_empty_position(){
     return this->empty_position;
 }
 
 vector<int> State::get_possible_moves(){
     return this->possible_moves;
-}
-
-void State::print_state(){
-    cout << endl;
-    for(int i = 0; i < 9; i++){
-
-        if(i == this->get_empty_position()) cout << "  ";
-        else  cout << this->positions[i] << " "; 
-        
-        if((i + 1) % 3 == 0) 
-            cout << endl;    
-    }
 }
 
 string State::get_key(){

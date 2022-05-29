@@ -4,6 +4,7 @@
 
 #include "./libs/state.hpp"
 #include "./libs/bfs.hpp"
+#include "./libs/ucs.hpp"
 
 using namespace std;
 
@@ -28,23 +29,30 @@ void load_algorithm(char &algorithm, vector<int> &positions, bool &flag){
 
     State initial_state = State(positions);
     stack<string> path;
+    Algorithm *alg;
+
     switch(algorithm) {
         case 'B':
-            BFS new_search = BFS();
-            new_search.search(initial_state);
-            path = new_search.retrive_path(initial_state);
-            cout << path.size() << endl;
+            alg = new BFS();
             break;
-        
-        default:
+        case 'I':
+            alg = new UCS();
             break;
     }
+
+    alg->search(initial_state);
+    path = alg->retrive_path(initial_state);
+    cout << path.size() - 1 << endl;
+    if(flag)
+        alg->print_path(path);
+    
+    delete(alg);
 }
 
 int main(int argc, char const *argv[]) {
     
     char algorithm = (char) *argv[1];
-    
+
     vector<int> positions; 
     for(int i = 2; i < 11; i++)
         positions.push_back(atoi(argv[i]));

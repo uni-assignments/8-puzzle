@@ -1,4 +1,5 @@
 #ifndef STATE_HEADER
+#define STATE_HEADER
 
 #include<vector>
 
@@ -20,13 +21,13 @@ class State {
 
     public:
         State(vector<int> positions);
+        static void print_state(string state_key);
         
         int get_empty_position();
         vector<int> get_possible_moves();
         vector<int> generate_new_position(int next, int current);
         State make_move(int move);
         string get_key();
-        void print_state();
         bool check_if_state_is_final();
 }; 
 
