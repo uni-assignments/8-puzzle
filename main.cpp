@@ -62,6 +62,7 @@ int main(int argc, char const *argv[]) {
     if(str_flag.compare("PRINT") == 0) //Se o ultimo parametro passado for print
         flag = true;    
 
+
     load_algorithm(algorithm, positions, flag);
 
     return 0;

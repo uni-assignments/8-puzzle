@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/c/Users/ritar/Documentos/UFMG/Quarto Periodo/Introdução a Inteligencia Artificial/8-puzzle'
+g++ -std=c++17  -c src/bfs.cpp -o ./build/bfs.o
+ 
+g++ -std=c++17  -c src/ucs.cpp -o build/ucs.o
+g++ -std=c++17  -c src/state.cpp -o ./build/state.o
+g++ -std=c++17  -c src/abstract_algorithm.cpp -o build/algorithm.o
+g++ -std=c++17  main.cpp build/bfs.o build/ucs.o build/state.o build/algorithm.o -o ./TP1 
+make: Leaving directory '/mnt/c/Users/ritar/Documentos/UFMG/Quarto Periodo/Introdução a Inteligencia Artificial/8-puzzle'
+ 
