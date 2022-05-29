@@ -8,8 +8,11 @@
 #include "abstract_algorithm.hpp"
 
 class UCS : public Algorithm{
+    private:
+        map<string, int> distance;
+    
     public:
-        void search(State initial_state);
+        void search(State init_state);
 };
 
 #endif

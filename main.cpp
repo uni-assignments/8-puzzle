@@ -8,23 +8,6 @@
 
 using namespace std;
 
-/*
-void simple_tests(State initial_state){
-    cout << "empty: " << initial_state.get_empty_position();
-    
-    initial_state.print_state();
-    for (auto move : initial_state.get_possible_moves())
-        cout << "podemos Mover: " << move << ", ";
-
-    State new_state = initial_state.make_move(1);
-    new_state.print_state();
-
-    cout << initial_state.get_key() << endl;
-
-    cout << initial_state.check_if_state_is_final() << endl;
-}
-*/
-
 void load_algorithm(char &algorithm, vector<int> &positions, bool &flag){
 
     State initial_state = State(positions);

@@ -7,6 +7,10 @@ using namespace std;
 State::State(vector<int> positions){
     this->positions = positions;
 
+    for(auto pos : this->positions){
+        this->key.append(to_string(pos));
+    }
+
     for (int i = 0; i < 9; i++) if(positions[i] == 0) {
         this->empty_position = i;
         break;
@@ -33,23 +37,16 @@ void State::print_state(string state_key){
     }
 }
 
+bool State::operator<(State const &s) const {
+    return s.key < this->key;
+}
 
 int State::get_empty_position(){
     return this->empty_position;
 }
 
-vector<int> State::get_possible_moves(){
-    return this->possible_moves;
-}
-
 string State::get_key(){
-    string key;
-
-    for(auto pos : this->positions){
-        key.append(to_string(pos));
-    }
-
-    return key;
+    return this->key;
 }
 
 vector<int> State::generate_new_position(int next, int current){
@@ -82,7 +79,15 @@ State State::make_move(int move){
     return State(config);
 }
 
-bool State::check_if_state_is_final(){
+vector<State> State::get_possible_moves(){
+    vector<State> next_states;
+    for (auto move: this->possible_moves)
+        next_states.push_back(this->make_move(move));
+    
+    return next_states;
+}
+
+bool State::is_goal(){
     for(int i = 0; i < 8; i++){
         if(this->positions[i] != i + 1){
             return false;

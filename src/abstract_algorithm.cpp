@@ -39,10 +39,10 @@ void Algorithm::print_path(stack<string> path){
     }
 }
 
-void Algorithm::mark_as_visited(string state_key){
-    this->visited[state_key] = true;
+void Algorithm::mark_as_found(string state_key){
+    this->found[state_key] = true;
 }
 
-bool Algorithm::state_was_visited(string state_key){
-    return this->visited[state_key];
+bool Algorithm::state_was_found(string state_key){
+    return this->found[state_key];
 }

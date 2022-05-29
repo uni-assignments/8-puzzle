@@ -6,23 +6,20 @@
 #include "../libs/state.hpp"
 #include "../libs/bfs.hpp"
 
-void BFS::search(State initial_state){
-    queue<State> open_list; open_list.push(initial_state);
-    this->mark_as_visited(initial_state.get_key());
+void BFS::search(State init_state){
+    queue<State> open_list; open_list.push(init_state);                  //Queue with nodes from frontier
+    mark_as_found(init_state.get_key());                                 //Initial node is marked as found
     
-    while(!open_list.empty()){
-        State current = open_list.front(); open_list.pop();
-        this->mark_as_visited(current.get_key());
-        if(current.check_if_state_is_final()){
+    while(not open_list.empty()){                                           //Loop while theres nodes to be explored 
+        State cur_state = open_list.front(); open_list.pop();                 //Fetch next node in frontier
+        if(cur_state.is_goal())                                               //if node is goal, search can end
             return ;
-        }
 
-        for(auto move: current.get_possible_moves()){ 
-            State to_be_explored = current.make_move(move);
-            if(!this->state_was_visited(to_be_explored.get_key())){
-                open_list.push(to_be_explored);
-                this->parents[to_be_explored.get_key()] = current.get_key();
-            }
+        //loops through possible moves from current node
+        for(State next_state: cur_state.get_possible_moves()) if(not state_was_found(next_state.get_key())) {    
+            open_list.push(next_state);                                     // --> add  node in frontier
+            mark_as_found(cur_state.get_key());                               // --> mark the node as found
+            parents[next_state.get_key()] = cur_state.get_key();              // --> saves the parent of the node
         }
     }
 }

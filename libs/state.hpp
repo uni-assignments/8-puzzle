@@ -2,6 +2,7 @@
 #define STATE_HEADER
 
 #include<vector>
+#include<string>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ enum Directions{
 class State {
 
     private: 
+        string key;
         vector<int> positions;
         int empty_position;
         vector<int> possible_moves;
@@ -22,13 +24,15 @@ class State {
     public:
         State(vector<int> positions);
         static void print_state(string state_key);
+
+        bool operator<(State const &s) const;
         
         int get_empty_position();
-        vector<int> get_possible_moves();
+        vector<State> get_possible_moves();
         vector<int> generate_new_position(int next, int current);
         State make_move(int move);
         string get_key();
-        bool check_if_state_is_final();
+        bool is_goal();
 }; 
 
 #endif

@@ -9,7 +9,7 @@
 
 class BFS : public Algorithm{
     public:
-        void search(State initial_state);
+        void search(State init_state);
 };
 
 #endif
