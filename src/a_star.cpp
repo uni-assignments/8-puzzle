@@ -9,6 +9,7 @@
 #include "../libs/a_star.hpp"
 
 
+
 void A_Star::search(State init_state){
     priority_queue<pair<int, State>, vector<pair<int, State>>, greater<pair<int, State>>> open_list; //Define heap, <dist, state>
     distance[init_state.get_key()] = 0;  
