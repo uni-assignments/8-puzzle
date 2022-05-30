@@ -2,8 +2,8 @@ CC=g++
 CFLAGS=-std=c++17 # compiler flags, troque o que quiser, exceto bibliotecas externas
 EXEC=./TP1 # nome do executavel que sera gerado, nao troque
 
-$(EXEC): main.cpp state.o algorithm.o bfs.o ids.o ucs.o
-	$(CC) $(CFLAGS) main.cpp build/state.o build/algorithm.o build/bfs.o build/ids.o build/ucs.o -o $(EXEC)
+$(EXEC): main.cpp state.o algorithm.o bfs.o ids.o ucs.o a_star.o greedy.o
+	$(CC) $(CFLAGS) main.cpp build/state.o build/algorithm.o build/bfs.o build/ids.o build/ucs.o build/a_star.o build/greedy.o  -o $(EXEC)
 
 state.o: src/state.cpp 
 	$(CC) $(CFLAGS) -c src/state.cpp -o build/state.o
@@ -19,6 +19,12 @@ ids.o: src/ids.cpp
 
 ucs.o: src/ucs.cpp 
 	$(CC) $(CFLAGS) -c src/ucs.cpp -o build/ucs.o
+
+a_star.o: src/a_star.cpp 
+	$(CC) $(CFLAGS) -c src/a_star.cpp -o build/a_star.o
+
+greedy.o: src/greedy.cpp 
+	$(CC) $(CFLAGS) -c src/greedy.cpp -o build/greedy.o
 
 # To run algorithm B(breadth first search), run make test ALG="B"
 test: $(EXEC)

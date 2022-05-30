@@ -6,6 +6,8 @@
 #include "./libs/bfs.hpp"
 #include "./libs/ucs.hpp"
 #include "./libs/ids.hpp"
+#include "./libs/a_star.hpp"
+#include "./libs/greedy.hpp"
 
 using namespace std;
 
@@ -24,6 +26,12 @@ void load_algorithm(char &algorithm, vector<int> &positions, bool &flag){
             break;
         case 'U':
             alg = new UCS();
+            break;
+        case 'A':
+            alg = new A_Star();
+            break;
+        case 'G':
+            alg = new Greedy();
             break;
     }
 

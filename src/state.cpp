@@ -1,5 +1,7 @@
 #include <iostream>
+#include <cmath>
 #include <string>
+
 #include "../libs/state.hpp"
 
 using namespace std;
@@ -95,4 +97,29 @@ bool State::is_goal(){
     }
 
     return true;
+}
+
+
+// -------------------------------------------------------- Heuristics ----------------------------------------------------
+
+int State::amount_of_wrong_pieces(){
+    int count = 0;
+    for(unsigned i = 0; i < 9; i++) if(this->positions[i] != i+1) {
+        count++;
+    }
+    return count;
+}
+
+int State::sum_of_distance(){
+    int state_x, correct_x, state_y, correct_y, sum = 0;
+    for(unsigned i = 0; i < 9; i++) {
+        state_x = this->positions[i] % 3;
+        correct_x = (i + 1) % 3;
+        state_y = ceil(this->positions[i]/3);
+        correct_y = ceil(this->positions[i]/3);
+
+        sum += (abs(state_x - correct_x) + abs(state_y - correct_y));
+    }
+
+    return sum;
 }

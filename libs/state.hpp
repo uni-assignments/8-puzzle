@@ -33,6 +33,9 @@ class State {
         State make_action(int action);
         string get_key();
         bool is_goal();
+
+        int amount_of_wrong_pieces();
+        int sum_of_distance();
 }; 
 
 #endif
