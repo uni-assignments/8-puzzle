@@ -17,11 +17,11 @@ void BFS::search(State init_state){
 
         //loops through possible moves from current node
         for(State next_state: cur_state.get_possible_actions()) if(not state_was_found(next_state.get_key())) {    
-            if(cur_state.is_goal()) return ;                                             //if node is goal, search can end
+            parents[next_state.get_key()] = cur_state.get_key();              // --> saves the parent of the node
+            mark_as_found(next_state.get_key());                               // --> mark the node as found
+            if(next_state.is_goal()) return ;                                             //if node is goal, search can end
 
             open_list.push(next_state);                                     // --> add  node in frontier
-            mark_as_found(next_state.get_key());                               // --> mark the node as found
-            parents[next_state.get_key()] = cur_state.get_key();              // --> saves the parent of the node
             
         } 
     }

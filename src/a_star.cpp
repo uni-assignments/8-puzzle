@@ -19,18 +19,19 @@ void A_Star::search(State init_state){
     while(not open_list.empty()){
         auto [cur_cost, cur_state] = open_list.top(); open_list.pop();                       //Pop smallest distance                                                
         
-        if(cur_state.is_goal())                                                              //if node is goal, search can end
-            return ;                                                    
+                                                            
         if (cur_cost > init_state.amount_of_wrong_pieces() + distance[cur_state.get_key()])         //if path is worse then previous, skip
             continue;
 
         //loops through possible moves from current node
         for(State next_state: cur_state.get_possible_actions()) if(not state_was_found(next_state.get_key())) {    
+            parents[next_state.get_key()] = cur_state.get_key();                              // saves the parent of the node
+            mark_as_found(next_state.get_key());                                              // mark the node as found
+            if(next_state.is_goal())                                                              //if node is goal, search can end
+                return ;
             distance[next_state.get_key()] = distance[cur_state.get_key()] + 1;               // compute new distance
             cost = distance[next_state.get_key()] + next_state.amount_of_wrong_pieces();             // calculate cost (dist(x) + heuristic(x))
             open_list.emplace(cost, next_state);                                              // add  node in frontier
-            mark_as_found(next_state.get_key());                                              // mark the node as found
-            parents[next_state.get_key()] = cur_state.get_key();                              // saves the parent of the node
         }
     }
 }
