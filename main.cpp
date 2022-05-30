@@ -5,6 +5,7 @@
 #include "./libs/state.hpp"
 #include "./libs/bfs.hpp"
 #include "./libs/ucs.hpp"
+#include "./libs/ids.hpp"
 
 using namespace std;
 
@@ -19,6 +20,9 @@ void load_algorithm(char &algorithm, vector<int> &positions, bool &flag){
             alg = new BFS();
             break;
         case 'I':
+            alg = new IDS();
+            break;
+        case 'U':
             alg = new UCS();
             break;
     }

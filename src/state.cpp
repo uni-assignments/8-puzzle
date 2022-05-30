@@ -17,13 +17,13 @@ State::State(vector<int> positions){
     }
 
     if(this->empty_position > 2)                // 0, 1 and 2 cant go UP
-        this->possible_moves.push_back(UP);   
+        this->possible_actions.push_back(UP);   
     if((this->empty_position + 1) % 3 != 0)     // 2, 5 and 8 cant go RIGHT
-        this->possible_moves.push_back(RIGHT);
+        this->possible_actions.push_back(RIGHT);
     if(this->empty_position < 6)                // 6, 7 and 8 cant go DOWN
-        this->possible_moves.push_back(DOWN);
+        this->possible_actions.push_back(DOWN);
     if(this->empty_position % 3 != 0)           // 0, 3 and 6 cant go LEFT
-        this->possible_moves.push_back(LEFT);
+        this->possible_actions.push_back(LEFT);
 }
 
 void State::print_state(string state_key){
@@ -57,10 +57,10 @@ vector<int> State::generate_new_position(int next, int current){
     return config;
 }
 
-State State::make_move(int move){
+State State::make_action(int action){
     int next, current = this->get_empty_position();
     
-    switch (move){
+    switch (action){
         case UP:
             next = current - 3;
             break;
@@ -79,10 +79,10 @@ State State::make_move(int move){
     return State(config);
 }
 
-vector<State> State::get_possible_moves(){
+vector<State> State::get_possible_actions(){
     vector<State> next_states;
-    for (auto move: this->possible_moves)
-        next_states.push_back(this->make_move(move));
+    for (auto action: this->possible_actions)
+        next_states.push_back(this->make_action(action));
     
     return next_states;
 }

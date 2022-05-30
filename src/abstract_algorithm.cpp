@@ -19,10 +19,11 @@ stack<string> Algorithm::retrive_path(State initial_state){
     string initial_key (initial_state.get_key());
     
     stack<string> path;
-
-    while (parent.compare(initial_key)){
-        path.push(parent);
-        parent = this->parents[parent];
+    if(parents.count(parent) > 0) {
+        while (parent.compare(initial_key)){
+            path.push(parent);
+            parent = this->parents[parent];
+        }
     }
 
     path.push(initial_key);
@@ -40,9 +41,9 @@ void Algorithm::print_path(stack<string> path){
 }
 
 void Algorithm::mark_as_found(string state_key){
-    this->found[state_key] = true;
+    this->found[state_key]++;
 }
 
 bool Algorithm::state_was_found(string state_key){
-    return this->found[state_key];
+    return this->found.count(state_key) > 0;
 }

@@ -2,20 +2,20 @@ CC=g++
 CFLAGS=-std=c++17 # compiler flags, troque o que quiser, exceto bibliotecas externas
 EXEC=./TP1 # nome do executavel que sera gerado, nao troque
 
-$(EXEC): main.cpp bfs.o ucs.o state.o algorithm.o # ids.o ucs.o
-	$(CC) $(CFLAGS) main.cpp build/bfs.o build/ucs.o build/state.o build/algorithm.o -o $(EXEC)
-
-bfs.o: src/bfs.cpp 
-	$(CC) $(CFLAGS) -c src/bfs.cpp -o ./build/bfs.o
+$(EXEC): main.cpp state.o algorithm.o bfs.o ids.o ucs.o
+	$(CC) $(CFLAGS) main.cpp build/state.o build/algorithm.o build/bfs.o build/ids.o build/ucs.o -o $(EXEC)
 
 state.o: src/state.cpp 
-	$(CC) $(CFLAGS) -c src/state.cpp -o ./build/state.o
+	$(CC) $(CFLAGS) -c src/state.cpp -o build/state.o
 
 algorithm.o: src/abstract_algorithm.cpp 
 	$(CC) $(CFLAGS) -c src/abstract_algorithm.cpp -o build/algorithm.o
 
-# ids.o: src/ids.cpp 
-# 	$(CC) $(CFLAGS) -c src/ids.cpp -o build/ids.o
+bfs.o: src/bfs.cpp 
+	$(CC) $(CFLAGS) -c src/bfs.cpp -o build/bfs.o
+
+ids.o: src/ids.cpp 
+	$(CC) $(CFLAGS) -c src/ids.cpp -o build/ids.o
 
 ucs.o: src/ucs.cpp 
 	$(CC) $(CFLAGS) -c src/ucs.cpp -o build/ucs.o

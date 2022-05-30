@@ -19,7 +19,7 @@ class State {
         string key;
         vector<int> positions;
         int empty_position;
-        vector<int> possible_moves;
+        vector<int> possible_actions;
 
     public:
         State(vector<int> positions);
@@ -28,9 +28,9 @@ class State {
         bool operator<(State const &s) const;
         
         int get_empty_position();
-        vector<State> get_possible_moves();
+        vector<State> get_possible_actions();
         vector<int> generate_new_position(int next, int current);
-        State make_move(int move);
+        State make_action(int action);
         string get_key();
         bool is_goal();
 }; 

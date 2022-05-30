@@ -6,7 +6,7 @@
 class Algorithm {
     
     protected:
-        map<string, bool> found;
+        map<string, int> found;
         map<string, string> parents; // <'str1', 'str2'> str1 is a child of str2
     
     public:    
