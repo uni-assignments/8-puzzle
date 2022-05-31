@@ -9,7 +9,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 
-# Make data base, printed on Mon May 30 11:42:35 2022
+# Make data base, printed on Mon May 30 22:26:04 2022
 
 # Variables
 
@@ -62,7 +62,7 @@ NVM_BIN = /home/riversong/.nvm/versions/node/v16.15.0/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-906c20b2-4c91-42ab-84db-c61990546331.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e5a92503-5436-4f69-bf1e-9bf627b759bf.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -84,7 +84,7 @@ LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
 LOGNAME = riversong
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 NVM_CD_FLAGS = 
 # environment
@@ -159,8 +159,10 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
+# environment
+MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=73/1024=7%, Rehash=0, Collisions=4/100=4%
+# Load=74/1024=7%, Rehash=0, Collisions=4/101=4%
 
 # Pattern-specific Variable Values
 
@@ -177,6 +179,13 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 # No implicit rules.
 
 # Files
+
+hill_climbing.o: src/hill_climbing.cpp
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 30):
+	$(CC) $(CFLAGS) -c src/hill_climbing.cpp -o build/hill_climbing.o
 
 bfs.o: src/bfs.cpp
 #  Implicit rule search has not been done.
@@ -227,22 +236,28 @@ state.o: src/state.cpp
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 11:42:14.191526
+#  Last modified 2022-05-30 22:25:56.6865206
 #  File has been updated.
 #  Successfully updated.
 
-TP1: main.cpp state.o algorithm.o bfs.o ids.o ucs.o a_star.o greedy.o
+TP1: main.cpp state.o algorithm.o bfs.o ids.o ucs.o a_star.o greedy.o hill_climbing.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 6):
-	$(CC) $(CFLAGS) main.cpp build/state.o build/algorithm.o build/bfs.o build/ids.o build/ucs.o build/a_star.o build/greedy.o  -o $(EXEC)
+	$(CC) $(CFLAGS) main.cpp build/state.o build/algorithm.o build/bfs.o build/ids.o build/ucs.o build/a_star.o build/greedy.o build/hill_climbing.o -o $(EXEC)
+
+# Not a target:
+src/hill_climbing.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 test: TP1
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  recipe to execute (from 'Makefile', line 34):
 	@bash run_tests.sh $(EXEC) $(ALG)
 
 # Not a target:
@@ -280,7 +295,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 37):
 	rm -rf ./build/*
 	rm -rf TP1
 
@@ -318,19 +333,19 @@ src/ids.cpp:
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=22/1024=2%, Rehash=0, Collisions=0/55=0%
+# Load=24/1024=2%, Rehash=0, Collisions=2/60=3%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 309 B / avg = 9 B
-# current buf: size = 8162 B / used = 309 B / count = 33 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 347 B / avg = 9 B
+# current buf: size = 8162 B / used = 347 B / count = 35 / avg = 9 B
 
-# strcache performance: lookups = 57 / hit rate = 42%
+# strcache performance: lookups = 61 / hit rate = 42%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=1/57=2%
-# Finished Make data base on Mon May 30 11:42:35 2022
+# Load=35/8192=0%, Rehash=0, Collisions=1/61=2%
+# Finished Make data base on Mon May 30 22:26:04 2022
 
  

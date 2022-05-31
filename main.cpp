@@ -8,6 +8,7 @@
 #include "./libs/ids.hpp"
 #include "./libs/a_star.hpp"
 #include "./libs/greedy.hpp"
+#include "./libs/hill_climbing.hpp"
 
 using namespace std;
 
@@ -32,6 +33,9 @@ void load_algorithm(char &algorithm, vector<int> &positions, bool &flag){
             break;
         case 'G':
             alg = new Greedy();
+            break;
+        case 'H':
+            alg = new HillClimbing();
             break;
     }
 

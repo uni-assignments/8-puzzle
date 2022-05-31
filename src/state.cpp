@@ -102,6 +102,14 @@ bool State::is_goal(){
 
 // -------------------------------------------------------- Heuristics ----------------------------------------------------
 
+int State::value(){
+    int count = 0;
+    for(int i = 0; i < 9; i++) if(this->positions[i] == i + 1){
+        count++;
+    }
+    return count;
+}
+
 int State::amount_of_wrong_pieces(){
     int count = 0;
     for(unsigned i = 0; i < 9; i++) if(this->positions[i] != i+1) {

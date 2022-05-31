@@ -23,6 +23,7 @@ class State {
 
     public:
         State(vector<int> positions);
+        State(){};
         static void print_state(string state_key);
 
         bool operator<(State const &s) const;
@@ -33,7 +34,7 @@ class State {
         State make_action(int action);
         string get_key();
         bool is_goal();
-
+        int value();
         int amount_of_wrong_pieces();
         int sum_of_distance();
 }; 
