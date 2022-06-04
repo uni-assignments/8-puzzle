@@ -9,7 +9,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target 'all'.  Stop.
 
 
-# Make data base, printed on Mon May 30 22:26:04 2022
+# Make data base, printed on Fri Jun  3 22:36:07 2022
 
 # Variables
 
@@ -23,8 +23,6 @@ WSLENV = VSCODE_WSL_EXT_LOCATION/up
 .SHELLFLAGS := -c
 # environment
 VSCODE_LOG_NATIVE = false
-# environment
-NVM_INC = /home/riversong/.nvm/versions/node/v16.15.0/include/node
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -38,7 +36,7 @@ SHELL = /bin/sh
 # environment
 VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"74ce6549a467d1dfaba55fb5394742c9.pt-br","_translationsConfigFile":"/home/riversong/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/tcf.json","_cacheRoot":"/home/riversong/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br","_resolvedLanguagePackCoreLocation":"/home/riversong/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/riversong/.vscode-server/data/clp/74ce6549a467d1dfaba55fb5394742c9.pt-br/corrupted.info","_languagePackSupport":true}
 # environment
-_ = /home/riversong/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
+_ = /usr/bin/sh
 # makefile (from 'Makefile', line 2)
 CFLAGS = -std=c++17 
 # makefile (from 'Makefile', line 1)
@@ -46,27 +44,19 @@ MAKEFILE_LIST :=  Makefile
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
-# environment
 VSCODE_VERBOSE_LOGGING = true
-# environment
-LESSOPEN = | /usr/bin/lesspipe %s
 # environment
 VSCODE_CWD = /mnt/c/Users/ritar/AppData/Local/Programs/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/riversong/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/home/riversong/.local/bin:/home/riversong/.nvm/versions/node/v16.15.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Pandoc/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/ritar/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/ritar/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/ritar/AppData/Roaming/cabal/bin:/mnt/c/tools/ghc-9.0.1/bin:/mnt/c/tools/msys64:/mnt/c/Program Files/heroku/bin:/mnt/c/Progra~1/Java/jdk-16.0.1/bin:/snap/bin
-# environment
-NVM_BIN = /home/riversong/.nvm/versions/node/v16.15.0/bin
+PATH = /home/riversong/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/ProgramData/chocolatey/bin:/mnt/c/Program Files/Pandoc/:/mnt/c/Program Files/Git/cmd:/mnt/c/Users/ritar/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/ritar/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/ritar/AppData/Roaming/cabal/bin:/mnt/c/tools/ghc-9.0.1/bin:/mnt/c/tools/msys64:/mnt/c/Program Files/heroku/bin:/mnt/c/Progra~1/Java/jdk-16.0.1/bin
 # environment
 VSCODE_LOG_STACK = false
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-e5a92503-5436-4f69-bf1e-9bf627b759bf.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-92525b3f-bc7d-4162-a125-fc6d44b37fd2.sock
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
-# environment
-LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # automatic
 %F = $(notdir $%)
 # environment
@@ -80,13 +70,9 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/riversong
 # environment
-LESSCLOSE = /usr/bin/lesspipe %s %s
-# environment
 LOGNAME = riversong
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-NVM_CD_FLAGS = 
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # automatic
@@ -127,8 +113,6 @@ MAKEFLAGS = pqrR
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# environment
-NVM_DIR = /home/riversong/.nvm
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # automatic
@@ -159,10 +143,8 @@ TERM = xterm-256color
 VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
-# environment
-MOTD_SHOWN = update-motd
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=4/101=4%
+# Load=65/1024=6%, Rehash=0, Collisions=4/92=4%
 
 # Pattern-specific Variable Values
 
@@ -170,9 +152,9 @@ MOTD_SHOWN = update-motd
 
 # Directories
 
-# . (device 14, inode 4503599627730698): 12 files, no impossibilities.
+# . (device 14, inode 4503599627730698): 15 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -236,7 +218,7 @@ state.o: src/state.cpp
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-30 22:25:56.6865206
+#  Last modified 2022-06-03 22:33:58.1114017
 #  File has been updated.
 #  Successfully updated.
 
@@ -258,6 +240,8 @@ test: TP1
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 34):
+	mkdir -p times
+	rm -f ./times/$(ALG).csv
 	@bash run_tests.sh $(EXEC) $(ALG)
 
 # Not a target:
@@ -295,7 +279,7 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 37):
+#  recipe to execute (from 'Makefile', line 39):
 	rm -rf ./build/*
 	rm -rf TP1
 
@@ -340,12 +324,12 @@ src/ids.cpp:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 35 / storage = 347 B / avg = 9 B
-# current buf: size = 8162 B / used = 347 B / count = 35 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 393 B / avg = 10 B
+# current buf: size = 8162 B / used = 393 B / count = 38 / avg = 10 B
 
-# strcache performance: lookups = 61 / hit rate = 42%
+# strcache performance: lookups = 64 / hit rate = 40%
 # hash-table stats:
-# Load=35/8192=0%, Rehash=0, Collisions=1/61=2%
-# Finished Make data base on Mon May 30 22:26:04 2022
+# Load=38/8192=0%, Rehash=0, Collisions=1/64=2%
+# Finished Make data base on Fri Jun  3 22:36:07 2022
 
  

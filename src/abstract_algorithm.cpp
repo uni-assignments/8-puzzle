@@ -31,6 +31,10 @@ stack<string> Algorithm::retrive_path(State initial_state){
     return path;
 }
 
+int Algorithm::get_expanded_states(){
+    return this->expanded_states;
+}
+
 void Algorithm::print_path(stack<string> path){
     string current_state;
     

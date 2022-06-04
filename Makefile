@@ -31,6 +31,8 @@ hill_climbing.o: src/hill_climbing.cpp
 
 # To run algorithm B(breadth first search), run make test ALG="B"
 test: $(EXEC)
+	mkdir -p times
+	rm -f ./times/$(ALG).csv
 	@bash run_tests.sh $(EXEC) $(ALG)
 
 clean: # remove todos os arquivos temporarios que forem gerados pela compilacao

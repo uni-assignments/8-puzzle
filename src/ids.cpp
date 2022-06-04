@@ -32,6 +32,7 @@ bool IDS::dfs(State cur_state, int limit){
     if(limit == 0) return false;                                          // reached limit 
 
     mark_as_black(cur_state.get_key());
+    expanded_states++;
     for(State next_state: cur_state.get_possible_actions()) {
         if(not state_is_black(next_state.get_key())){    
             parents[next_state.get_key()] = cur_state.get_key();          // --> saves the parent of the node

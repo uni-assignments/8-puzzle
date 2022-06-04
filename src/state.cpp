@@ -112,7 +112,7 @@ int State::value(){
 
 int State::amount_of_wrong_pieces(){
     int count = 0;
-    for(unsigned i = 0; i < 9; i++) if(this->positions[i] != i+1) {
+    for(unsigned i = 0; i < 9; i++) if(this->positions[i] != i+1 and this->positions[i] != 0) {
         count++;
     }
     return count;
@@ -121,10 +121,14 @@ int State::amount_of_wrong_pieces(){
 int State::sum_of_distance(){
     int state_x, correct_x, state_y, correct_y, sum = 0;
     for(unsigned i = 0; i < 9; i++) {
-        state_x = this->positions[i] % 3;
-        correct_x = (i + 1) % 3;
-        state_y = ceil(this->positions[i]/3);
-        correct_y = ceil(this->positions[i]/3);
+        
+        if(this->positions[i] == 0) continue;
+
+        state_x = i % 3;
+        correct_x = (this->positions[i] - 1) % 3;
+
+        state_y = floor(i/3);
+        correct_y = floor((this->positions[i]-1)/3);
 
         sum += (abs(state_x - correct_x) + abs(state_y - correct_y));
     }

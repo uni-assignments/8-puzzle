@@ -10,7 +10,7 @@
 
 
 void HillClimbing::search(State init_state){
-    int lim = 10;
+    int lim = 25;
     State current = init_state;
     while(lim--){
         State neighbor = State();
@@ -20,6 +20,7 @@ void HillClimbing::search(State init_state){
                 best_value = next_state.value();
                 neighbor = next_state;
             }
+            expanded_states++;
         }    
         if(neighbor.value() < current.value())
             return ;

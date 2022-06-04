@@ -23,6 +23,7 @@ void Greedy::search(State init_state){
         for(State next_state: cur_state.get_possible_actions()) if(not state_was_found(next_state.get_key())) {    
             open_list.emplace(next_state.sum_of_distance(), next_state);                    // --> add  node in frontier
             mark_as_found(next_state.get_key());                                              // --> mark the node as found
+            expanded_states++;
             parents[next_state.get_key()] = cur_state.get_key();                              // --> saves the parent of the node
         }
     }
